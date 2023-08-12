@@ -2,7 +2,6 @@
 
 ### Juego de Gestión de Tareas en Tiempo Real
 
-Concepto:
 TaskTrek es una aplicación que combina la gestión de tareas con elementos de juego en tiempo real. Los usuarios pueden crear tareas y asignarlas a ellos mismos o a otros, mientras compiten por completarlas y ganar puntos en tiempo real.
 
 ## Cómo funciona:
