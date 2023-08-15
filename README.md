@@ -14,7 +14,7 @@ TaskTrek es una aplicación que combina la gestión de tareas con elementos de j
 
 - **Notificaciones en Tiempo Real:** Implementa notificaciones en tiempo real utilizando WebSockets para alertar a los usuarios cuando alguien completa una tarea o cuando una tarea se ha asignado a ellos.
 
-- **Interfaz de Usuario Atractiva:** Diseña una interfaz de usuario atractiva y moderna utilizando Angular para garantizar que la aplicación sea visualmente agradable y fácil de usar.
+- **Interfaz de Usuario Atractiva:** Diseña una interfaz de usuario atractiva y moderna utilizando React para garantizar que la aplicación sea visualmente agradable y fácil de usar.
 
 - **Dashboard de Estadísticas:** Crea un dashboard que muestre estadísticas como el total de puntos ganados, tareas completadas y otras métricas interesantes.
 
