@@ -1,11 +1,10 @@
+import logo from "../assets/logo2.png";
+
 function Login() {
   return (
     <section className="h-full bg-[#F5F5F5] w-full py-16 px-4">
       <div className="flex flex-col items-center justify-center">
-        <img
-          src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg1.svg"
-          alt="logo"
-        />
+        <img src={logo} alt="logo" className="h-20 w-auto" />
 
         <div className="bg-white shadow rounded lg:w-1/3 md:w-1/2 w-full p-10 mt-16">
           <p
@@ -109,7 +108,7 @@ function Login() {
           <div className="mt-8">
             <button
               role="button"
-              className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl py-4 w-full"
+              className="focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 font-medium rounded text-sm leading-none text-white focus:outline-none bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl py-4 w-full"
             >
               Create my account
             </button>
