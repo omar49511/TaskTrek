@@ -1,3 +1,15 @@
+import Banner from "../components/Banner/Banner";
+import casco from "../assets/Season_2019_-_Bronze_1.webp";
+import plata from "../assets/Season_2019_-_Silver_1.webp";
+import oro from "../assets/Season_2019_-_Gold_1.webp";
+import platino from "../assets/Season_2019_-_Platinum_1.webp";
+import diamond from "../assets/Season_2019_-_Diamond_1.webp";
+
+import trim from "../assets/path1178.png";
+import trimSilver from "../assets/silver.png";
+import trimGold from "../assets/gold.png";
+import trimPlatino from "../assets/platinum.png";
+import trimDiamond from "../assets/diamond.png";
 const Profile = () => {
   return (
     <div className="bg-gray-100">
@@ -20,7 +32,50 @@ const Profile = () => {
       </div>
       <div className="py-8 px-48">
         <h2 className="text-2xl font-semibold mb-4">Logros</h2>
-        <hr className="w-2/3 h-1 bg-gray-300  mb-6"></hr>
+        <hr />
+        <div className="flex  gap-4">
+          <div>
+            <Banner
+              league="Bronze"
+              title="Bronce League"
+              imageSrc={casco}
+              additionalImageSrc={trim}
+            />
+          </div>
+          <div>
+            <Banner
+              league="Plata"
+              title="Plata League"
+              imageSrc={plata}
+              additionalImageSrc={trimSilver}
+            />
+          </div>
+          <div>
+            <Banner
+              league="Oro"
+              title="Oro League"
+              imageSrc={oro}
+              additionalImageSrc={trimGold}
+            />
+          </div>
+          <div>
+            <Banner
+              league="Platino"
+              title="Platino League"
+              imageSrc={platino}
+              additionalImageSrc={trimPlatino}
+            />
+          </div>
+          <div>
+            <Banner
+              league="Diamante"
+              title="Diamante League"
+              imageSrc={diamond}
+              additionalImageSrc={trimDiamond}
+            />
+          </div>
+        </div>
+
         <div className="space-y-4 w-1/3">
           {/* Tarjeta de logro 1 */}
 
