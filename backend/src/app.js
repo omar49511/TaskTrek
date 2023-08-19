@@ -1,6 +1,7 @@
-const express = require("express");
-const cors = require("cors");
-
+import express from "express";
 const app = express();
 
-module.exports = app;
+// Configuración y rutas de Express
+// ...
+
+export default app;

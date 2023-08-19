@@ -1,10 +1,14 @@
-require("dotenv").config();
-const app = require("./app");
-require("./database");
+import app from "./app.js";
 
-async function main() {
-  await app.listen(4000);
-  console.log("Server on port 4000");
-}
+const port = process.env.PORT || 3000;
 
-main();
+const startServer = async () => {
+  try {
+    await app.listen(port);
+    console.log(`Servidor Express en ejecución en el puerto ${port}`);
+  } catch (error) {
+    console.error("Error al iniciar el servidor:", error);
+  }
+};
+
+startServer();
