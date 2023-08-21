@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/logo2.png";
 
 function Login() {
@@ -18,12 +19,12 @@ function Login() {
             className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500"
           >
             Dont have account?{" "}
-            <a
-              href="javascript:void(0)"
+            <Link
+              to="/signup"
               className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer"
             >
               Sign up here
-            </a>
+            </Link>
           </p>
           <button
             aria-label="Continue with google"
