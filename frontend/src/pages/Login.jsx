@@ -111,7 +111,7 @@ function Login() {
               role="button"
               className="focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 font-medium rounded text-sm leading-none text-white focus:outline-none bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl py-4 w-full"
             >
-              Create my account
+              Login
             </button>
           </div>
         </div>

@@ -22,6 +22,18 @@ function Signup() {
               id="email"
               className="text-sm font-medium leading-none text-gray-800"
             >
+              Username
+            </label>
+            <input
+              type="text"
+              className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+            />
+          </div>
+          <div className="mt-6 w-full">
+            <label
+              id="email"
+              className="text-sm font-medium leading-none text-gray-800"
+            >
               Email
             </label>
             <input
