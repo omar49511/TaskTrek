@@ -6,8 +6,8 @@ import TaskCard from "./TaskCard";
 const TaskList = ({ tasks }) => {
   return (
     <div>
-      {tasks.map((task, index) => (
-        <TaskCard key={index} task={task} />
+      {tasks.map((task) => (
+        <TaskCard key={task.task_id} task={task} />
       ))}
     </div>
   );

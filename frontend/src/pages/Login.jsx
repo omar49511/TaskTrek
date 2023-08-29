@@ -3,7 +3,7 @@ import logo from "../assets/logo2.png";
 
 function Login() {
   return (
-    <section className="h-full bg-[#F5F5F5] w-full py-16 px-4">
+    <section className="py-16 px-4">
       <div className="flex flex-col items-center justify-center">
         <img src={logo} alt="logo" className="h-20 w-auto" />
 
