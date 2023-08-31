@@ -6,7 +6,7 @@ function Layout() {
   return (
     <>
       <Header user={user} />
-      <main className=" h-full bg-[#F5F5F5] w-full flex-grow flex items-center justify-center px-4 md:px-80 ">
+      <main className=" ">
         <Routers />
       </main>
       <Footer />

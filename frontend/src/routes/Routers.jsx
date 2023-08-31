@@ -5,6 +5,7 @@ import Profile from "../pages/Profile";
 
 import TaskForm from "../pages/TaskForm";
 import Signup from "../pages/Signup";
+import Pruebas from "../pages/Pruebas";
 
 function Routers() {
   const user = false;
@@ -15,6 +16,7 @@ function Routers() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile/:id" element={<Profile />} />
       <Route path="/newtask" element={<TaskForm />} />
+      <Route path="/pruebas" element={<Pruebas />} />
     </Routes>
   );
 }

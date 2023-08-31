@@ -47,6 +47,21 @@ const TaskCard = ({ task }) => {
         >
           {getPriorityLabel(task.priority)}
         </span>
+        <button
+          className="
+          bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded
+        "
+        >
+          Editar
+        </button>
+        <button
+          className="
+          bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded
+        "
+        >
+          Eliminar
+        </button>
+
         <span className="text-gray-400 text-xs">{formattedDeadline}</span>
       </div>
     </div>
