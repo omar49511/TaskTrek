@@ -1,16 +1,17 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Routers from "../routes/Routers";
+import { TaskContextProvider } from "../context/TaskContext";
 function Layout() {
   const user = false;
   return (
-    <>
+    <TaskContextProvider>
       <Header user={user} />
-      <main className=" h-full bg-[#F5F5F5] w-full flex-grow flex items-center justify-center px-4 md:px-80 ">
+      <main className=" ">
         <Routers />
       </main>
       <Footer />
-    </>
+    </TaskContextProvider>
   );
 }
 
