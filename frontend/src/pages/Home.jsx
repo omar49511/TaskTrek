@@ -1,20 +1,13 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import TaskList from "../components/TaskCard/TaskList";
+import { useTasks } from "../context/TaskContext";
 
 function Home() {
-  const [tasks, setTasks] = useState([]);
+  const { tasks, fetchTask } = useTasks();
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/tasks", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Data from API:", data);
-        setTasks(data.rows); // Establecer solo la propiedad 'rows' en el estado
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+    fetchTask();
+  }, [fetchTask]);
 
   return (
     <div className="container mx-auto p-4">

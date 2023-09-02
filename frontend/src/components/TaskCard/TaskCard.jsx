@@ -1,5 +1,8 @@
+import { useTasks } from "../../context/TaskContext";
 /* eslint-disable react/prop-types */
 const TaskCard = ({ task }) => {
+  const { deleteTask } = useTasks();
+
   const getPriorityLabel = (priority) => {
     switch (priority) {
       case 1:
@@ -55,6 +58,7 @@ const TaskCard = ({ task }) => {
           Editar
         </button>
         <button
+          onClick={() => deleteTask(task.task_id)}
           className="
           bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded
         "

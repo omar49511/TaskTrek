@@ -4,13 +4,14 @@
 import TaskCard from "./TaskCard";
 
 const TaskList = ({ tasks }) => {
-  return (
-    <div>
-      {tasks.map((task) => (
-        <TaskCard key={task.task_id} task={task} />
-      ))}
-    </div>
-  );
+  function renderMain() {
+    if (tasks.length === 0) {
+      return <p>No hay tareas</p>;
+    }
+    return tasks.map((task) => <TaskCard key={task.task_id} task={task} />);
+  }
+
+  return <div>{renderMain()}</div>;
 };
 
 export default TaskList;
