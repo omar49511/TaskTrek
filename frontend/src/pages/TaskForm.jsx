@@ -1,7 +1,15 @@
+import { useEffect } from "react";
 import { useTasks } from "../context/TaskContext";
+import { useParams } from "react-router-dom";
 
 function TaskForm() {
   const { formData, changeTask, submitTask } = useTasks();
+  const params = useParams();
+  useEffect(() => {
+    if (params.id) {
+      console.log("loading data");
+    }
+  }, []);
 
   return (
     <div className="w-full max-w-screen-lg mx-auto p-4">

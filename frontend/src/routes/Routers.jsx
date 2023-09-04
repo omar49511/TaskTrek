@@ -15,7 +15,8 @@ function Routers() {
       <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile/:id" element={<Profile />} />
-      <Route path="/newtask" element={<TaskForm />} />
+      <Route path="/new" element={<TaskForm />} />
+      <Route path="/edit/:id" element={<TaskForm />} />
       <Route path="/pruebas" element={<Pruebas />} />
     </Routes>
   );

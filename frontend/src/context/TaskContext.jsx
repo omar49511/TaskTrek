@@ -17,12 +17,8 @@ export const TaskContextProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
 
   const fetchTask = async () => {
-    try {
-      const tasks = await fetchTasks();
-      setTasks(tasks);
-    } catch (error) {
-      console.error("Error al obtener tareas:", error);
-    }
+    const tasks = await fetchTasks();
+    setTasks(tasks);
   };
   const initialFormData = {
     title: "",
@@ -31,6 +27,7 @@ export const TaskContextProvider = ({ children }) => {
     priority: 1,
     completed: false,
   };
+
   const [formData, setData] = useState(initialFormData);
 
   const changeTask = (e) => {
@@ -55,17 +52,8 @@ export const TaskContextProvider = ({ children }) => {
   };
 
   const deleteTask = async (taskId) => {
-    try {
-      const response = await deleteTaskRequest(taskId);
-      console.log(response);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      // Si la eliminación fue exitosa, puedes devolver algún mensaje o indicador.
-      return "Tarea eliminada con éxito";
-    } catch (error) {
-      return error;
-    }
+    const response = await deleteTaskRequest(taskId);
+    console.log(response);
   };
 
   return (
