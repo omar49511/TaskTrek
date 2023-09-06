@@ -1,5 +1,11 @@
 import { useState, createContext, useContext } from "react";
-import { fetchTasks, deleteTaskRequest, createTask } from "../api/task.api";
+import {
+  fetchTasks,
+  deleteTaskRequest,
+  createTask,
+  fetchTaskById,
+  updateTask,
+} from "../api/task.api";
 
 export const TaskContext = createContext();
 
@@ -20,6 +26,7 @@ export const TaskContextProvider = ({ children }) => {
     const tasks = await fetchTasks();
     setTasks(tasks);
   };
+
   const initialFormData = {
     title: "",
     description: "",
@@ -51,6 +58,27 @@ export const TaskContextProvider = ({ children }) => {
     }
   };
 
+  const fetchSingleTask = async (taskId) => {
+    try {
+      const task = await fetchTaskById(taskId);
+      return task;
+    } catch (error) {
+      console.error("Error fetching single task:", error);
+      throw error;
+    }
+  };
+
+  const updateSingleTask = async (taskId, updatedTaskData) => {
+    try {
+      const response = await updateTask(taskId, updatedTaskData);
+      // Manejar la respuesta de la actualización aquí si es necesario
+      console.log("Respuesta de la API para actualizar la tarea:", response);
+    } catch (error) {
+      console.error("Error al actualizar la tarea:", error);
+      throw error;
+    }
+  };
+
   const deleteTask = async (taskId) => {
     const response = await deleteTaskRequest(taskId);
     console.log(response);
@@ -58,7 +86,17 @@ export const TaskContextProvider = ({ children }) => {
 
   return (
     <TaskContext.Provider
-      value={{ tasks, fetchTask, deleteTask, formData, changeTask, submitTask }}
+      value={{
+        tasks,
+        fetchTask,
+        deleteTask,
+        formData,
+        changeTask,
+        submitTask,
+
+        fetchSingleTask,
+        updateSingleTask,
+      }}
     >
       {children}
     </TaskContext.Provider>

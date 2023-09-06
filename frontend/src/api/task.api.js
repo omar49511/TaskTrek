@@ -17,6 +17,23 @@ export const fetchTasks = async () => {
   }
 };
 
+export const fetchTaskById = async (taskId) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/${taskId}`, {
+      method: "GET",
+    });
+    if (!response.ok) {
+      throw new Error("Error fetching task details");
+    }
+
+    const taskData = await response.json();
+    return taskData; // Esto devolverá los detalles de la tarea.
+  } catch (error) {
+    console.error("Error fetching task details:", error);
+    throw error;
+  }
+};
+
 export const deleteTaskRequest = async (taskId) => {
   try {
     const response = await fetch(`${API_BASE_URL}/${taskId}`, {

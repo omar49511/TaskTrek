@@ -3,12 +3,35 @@ import { useTasks } from "../context/TaskContext";
 import { useParams } from "react-router-dom";
 
 function TaskForm() {
-  const { formData, changeTask, submitTask } = useTasks();
+  const { formData, changeTask, submitTask, fetchSingleTask } = useTasks();
   const params = useParams();
   useEffect(() => {
-    if (params.id) {
-      console.log("loading data");
-    }
+    const loadTask = async () => {
+      if (params.id) {
+        const task = await fetchSingleTask(params.id);
+        const taskData = task.rows[0]; // Obtiene el primer objeto dentro de "rows"
+        console.log(taskData);
+        const formatDeadline = (dateString = taskData.deadline) => {
+          const date = new Date(dateString);
+          const year = date.getFullYear();
+          const month = (date.getMonth() + 1).toString().padStart(2, "0");
+          const day = date.getDate().toString().padStart(2, "0");
+
+          return `${year}-${month}-${day}`;
+        };
+
+        changeTask({ target: { name: "title", value: taskData.title } });
+        changeTask({
+          target: { name: "description", value: taskData.description },
+        });
+        changeTask({ target: { name: "deadline", value: formatDeadline() } });
+        changeTask({ target: { name: "priority", value: taskData.priority } });
+        changeTask({
+          target: { name: "completed", value: taskData.completed },
+        });
+      }
+    };
+    loadTask();
   }, []);
 
   return (
