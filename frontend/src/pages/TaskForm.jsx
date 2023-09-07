@@ -3,7 +3,14 @@ import { useTasks } from "../context/TaskContext";
 import { useParams } from "react-router-dom";
 
 function TaskForm() {
-  const { formData, changeTask, submitTask, fetchSingleTask } = useTasks();
+  const {
+    formData,
+    changeTask,
+    submitTask,
+    fetchSingleTask,
+    updateSingleTask,
+  } = useTasks();
+
   const params = useParams();
   useEffect(() => {
     const loadTask = async () => {
@@ -34,9 +41,22 @@ function TaskForm() {
     loadTask();
   }, []);
 
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    if (params.id) {
+      // Si hay un id en la URL, estás en modo de edición
+      await updateSingleTask(params.id, formData);
+    } else {
+      // Si no hay id en la URL, estás creando una nueva tarea
+      await submitTask(formData);
+    }
+
+    // Después de la edición o creación, puedes redirigir al usuario a la página de inicio o a donde desees.
+  };
   return (
     <div className="w-full max-w-screen-lg mx-auto p-4">
-      <form onSubmit={submitTask}>
+      <form onSubmit={handleFormSubmit}>
         <div className="space-y-12">
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
@@ -118,7 +138,7 @@ function TaskForm() {
             </div>
           </div>
           <button type="submit" className="bg-blue-500 text-white px-4 py-2">
-            Guardar Tarea
+            {params.id ? "Editar Tarea" : "Guardar Tarea"}
           </button>
         </div>
       </form>
