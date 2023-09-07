@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useTasks } from "../context/TaskContext";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function TaskForm() {
+  const navigate = useNavigate();
   const {
     formData,
     changeTask,
@@ -39,6 +40,7 @@ function TaskForm() {
       }
     };
     loadTask();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFormSubmit = async (e) => {
@@ -53,7 +55,9 @@ function TaskForm() {
     }
 
     // Después de la edición o creación, puedes redirigir al usuario a la página de inicio o a donde desees.
+    navigate("/");
   };
+
   return (
     <div className="w-full max-w-screen-lg mx-auto p-4">
       <form onSubmit={handleFormSubmit}>

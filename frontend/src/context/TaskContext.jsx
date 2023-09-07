@@ -45,8 +45,7 @@ export const TaskContextProvider = ({ children }) => {
     }));
   };
 
-  const submitTask = async (e) => {
-    e.preventDefault();
+  const submitTask = async () => {
     try {
       const response = await createTask(formData);
       // Manejar la respuesta de createTask aquí si es necesario
