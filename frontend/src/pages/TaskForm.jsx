@@ -49,13 +49,13 @@ function TaskForm() {
     if (params.id) {
       // Si hay un id en la URL, estás en modo de edición
       await updateSingleTask(params.id, formData);
+      navigate("/");
     } else {
       // Si no hay id en la URL, estás creando una nueva tarea
       await submitTask(formData);
     }
 
     // Después de la edición o creación, puedes redirigir al usuario a la página de inicio o a donde desees.
-    navigate("/");
   };
 
   return (
