@@ -19,15 +19,3 @@ TaskTrek es una aplicación que combina la gestión de tareas con elementos de j
 - **Dashboard de Estadísticas:** Crea un dashboard que muestre estadísticas como el total de puntos ganados, tareas completadas y otras métricas interesantes.
 
 - **Colaboración y Asignación:** Permite a los usuarios asignar tareas a otros y colaborar en proyectos compartidos, lo que fomenta la colaboración y la comunicación en equipo.
-
-## Por qué es interesante:
-
-- **Gamificación de Tareas:** La incorporación de un sistema de puntos y competencia en tiempo real convierte la gestión de tareas en una experiencia divertida y motivadora.
-
-- **Desarrollo en Tiempo Real:** La implementación de notificaciones y actualizaciones en tiempo real utilizando WebSockets brinda una oportunidad emocionante para aprender sobre la programación en tiempo real.
-
-- **Aplicación Práctica:** TaskTrek combina la productividad con la diversión, ya que los usuarios pueden mejorar su gestión del tiempo mientras se divierten compitiendo por puntos.
-
-- **Habilidades MERN:** Desarrollar esta aplicación te brindará experiencia en todas las partes del stack MERN, lo que es valioso para mejorar tus habilidades de desarrollo web.
-
-- **Potencial de Expansión:** Puedes expandir la aplicación agregando características como recordatorios automáticos, integración con calendarios y más.
